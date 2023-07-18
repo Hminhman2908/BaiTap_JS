@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BÀI TẬP 4</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="shortcut icon"
+      href="../images/js-icon.png"
+      type="image/x-icon"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/pageCSs/style1.css" />
+  </head>
+  <body class="position-relative">
+    <header class="header">
+      <div class="container header__container">
+        <h2>Tính Giá Trị Trung Bình</h2>
+        <div class="header__content">
+          <input type="number" id="n1" placeholder="Nhập chiều dài" />
+          <input type="number" id="n2" placeholder="Nhập chiều rộng" />
+        </div>
+        <div class="header__btn">
+          <button class="btn btn-success" id="btnTinh">Tính</button>
+          <button class="btn btn-success" id="btnTinhLai">Tính lại</button>
+        </div>
+        <div class="header__terabox">
+          <textarea
+            name=""
+            id="ketqua"
+            rows="2"
+            placeholder="=> 0"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+    </header>
+    <div class="back position-fixed">
+      <button class="btn btn-back"><a href="../index.html">BACK</a></button>
+    </div>
+    <script>
+      document.getElementById("btnTinh").onclick = () => {
+        var chieudai = document.getElementById("n1").value;
+        var chieurong = document.getElementById("n2").value;
+        var chuvi = (Number(chieudai) + Number(chieurong)) * 2;
+        var dientich = Number(chieudai) * Number(chieurong);
+        document.getElementById("ketqua").style.color = "orange";
+        document.getElementById(
+          "ketqua"
+        ).innerHTML = `Diện tích: ${dientich} và Chu vi: ${chuvi}`;
+      };
+
+      document.getElementById("btnTinhLai").onclick = () => {
+        document.getElementById("n1").value = "";
+        document.getElementById("n2").value = "";
+        document.getElementById("ketqua").style.color = "orange";
+        document.getElementById("ketqua").innerHTML = "";
+      };
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
